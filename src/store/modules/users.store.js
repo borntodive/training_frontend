@@ -29,6 +29,15 @@ const actions = {
         .catch((error) => { reject(error) })
     })
   },
+  fetchUser (context, userId) {
+    return new Promise((resolve, reject) => {
+      axios.get(`/users/${userId}`)
+        .then((response) => {
+          resolve(response)
+        })
+        .catch((error) => { reject(error) })
+    })
+  },
 }
 // Mutations
 const mutations = {

@@ -46,6 +46,34 @@ const router = new Router({
                 name: 'certifications',
                 component: () => import('./views/pages/certifications/Certifications')
               },
+              {
+                path: '/users/:userId',
+                name: 'user-view',
+                component: () => import('./views/pages/users/show'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Home', url: '/' },
+                    { title: 'Users' },
+                    { title: 'View', active: true }
+                  ],
+                  pageTitle: 'User Profile',
+                  rule: 'editor'
+                }
+              },
+              {
+                path: '/users/edit/:userId',
+                name: 'user-edit',
+                component: () => import('./views/pages/users/edit/UserEdit'),
+                meta: {
+                  breadcrumb: [
+                    { title: 'Home', url: '/' },
+                    { title: 'Users' },
+                    { title: 'Edit', active: true }
+                  ],
+                  pageTitle: 'Edit Profile',
+                  rule: 'editor'
+                }
+              },
             ],
         },
 
